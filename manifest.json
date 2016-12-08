@@ -1,0 +1,21 @@
+{
+    "name": "ESEA Ranks",
+    "description": "Shows ESEA Ranks",
+    "version": "1.0",
+    "permissions": [
+        "http://*/",
+        "https://*/"
+    ],
+    "background": {
+        "scripts": ["jquery-3.1.1.js", "background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["https://www.twitch.tv/*"],
+        "js": ["jquery-3.1.1.js", "content_script.js"]
+    }],
+    "browser_action": {
+        "default_title": "Toggle",
+        "default_icon": "volumeOff.png"
+    },
+    "manifest_version": 2
+}

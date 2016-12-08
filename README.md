@@ -1,1 +1,1 @@
-# ESEA-Rank-Displayer
+ESEA Rank Displayer
