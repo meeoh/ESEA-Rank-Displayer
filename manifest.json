@@ -10,12 +10,11 @@
         "scripts": ["jquery-3.1.1.js", "background.js"]
     },
     "content_scripts": [{
-        "matches": ["https://www.twitch.tv/*"],
+        "matches": ["https://play.esea.net/index.php?s=stats&d=match&id=*"],
         "js": ["jquery-3.1.1.js", "content_script.js"]
     }],
     "browser_action": {
-        "default_title": "Toggle",
-        "default_icon": "volumeOff.png"
+        "default_title": "ESEA Rank Displayer",        
     },
     "manifest_version": 2
 }
