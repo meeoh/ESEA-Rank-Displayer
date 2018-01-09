@@ -1,12 +1,12 @@
 {
     "name": "ESEA Ranks",
     "description": "Shows ESEA Ranks",
-    "version": "1.1",    
+    "version": "1.1",
     "background": {
         "scripts": ["jquery-3.1.1.js", "background.js"]
     },
     "content_scripts": [{
-        "matches": ["https://play.esea.net/index.php?s=stats&d=match&id=*"],
+        "matches": ["https://play.esea.net/match/*"],
         "js": ["jquery-3.1.1.js", "content_script.js"]
     }],
     "browser_action": {
