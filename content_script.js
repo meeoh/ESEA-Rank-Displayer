@@ -1,17 +1,12 @@
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     if (msg.action == "refreshRanks") {
-        findRanks(1);
-        findRanks(2);
+        findRanks();
     }
 });
 
-function findRanks(i) {
+function doFetch(i) {
     var allUsers = $(document).find("#body-match-total" + i + " tr");
-
-    $.each($(document).find("#body-match-total" + i + " tr"), function(
-        index,
-        value
-    ) {
+    $.each(allUsers, function(index, value) {
         var userLink =
             "https://play.esea.net/users/" +
             allUsers[index].children[0].children[1].innerHTML;
@@ -26,5 +21,12 @@ function findRanks(i) {
     });
 }
 
-findRanks(1);
-findRanks(2);
+function findRanks() {
+    let i = 1;
+    while (i < 3) {
+        doFetch(i);
+        i += 1;
+    }
+}
+
+findRanks();

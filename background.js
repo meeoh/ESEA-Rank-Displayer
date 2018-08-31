@@ -14,3 +14,5 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
     }
     // do your thing
 });
+
+console.log("back");
