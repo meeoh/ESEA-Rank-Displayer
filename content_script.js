@@ -22,6 +22,7 @@ function doFetch(i) {
 }
 
 function findRanks() {
+    if(!location.href.match(/https:\/\/play\.esea\.net\/match\/+/)) return;
     let i = 1;
     while (i < 3) {
         doFetch(i);
