@@ -8,18 +8,21 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 });
 
 function doFetch(i) {
+    console.log('running');
 
     var existCondition = setInterval(function () {
-        if ($('.isosbo').length && !found) {
+        console.log($('.BoxContent').length);
+        if ($('.BoxContent').length && !found) {
             found = true;
             clearInterval(existCondition);
-            var allUsers = $(document).find("table .TextLink");
-            $.each(allUsers, function (index) {
+            var allUsers = $(document).find("table .Flex .TextLink");
+            $.each(allUsers, function (index) {                
                 var userId = allUsers[index].href.split('users/')[1];
+                console.log(userId)
                 $.get(`https://play.esea.net/api/users/${userId}/profile`, function (data) {
                     let rank = "?"
                     try {
-                        rank = data.data.rank.current;
+                        rank = data.data.rank.current || 'No rank';
                     }
                     catch (e) { }
                     allUsers[index].innerHTML +=
