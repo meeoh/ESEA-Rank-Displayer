@@ -1,7 +1,7 @@
 {
     "name": "ESEA Ranks",
     "description": "Shows ESEA Ranks",
-    "version": "1.7",
+    "version": "1.8",
     "background": {
         "scripts": ["jquery-3.1.1.js", "background.js"]
     },
