@@ -25,8 +25,7 @@ function doFetch(i) {
                         rank = data.data.rank.current || 'No rank';
                     }
                     catch (e) { }
-                    allUsers[index].innerHTML +=
-                        " (" + rank + ")";                    
+                    $(allUsers[index]).parent().parent().prepend(`(${rank}) `);                    
                 });
             });
         }
