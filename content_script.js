@@ -22,7 +22,7 @@ function doFetch(i) {
                 $.get(`https://play.esea.net/api/users/${userId}/profile`, function (data) {
                     let rank = "?"
                     try {
-                        rank = data.data.rank.current || 'No rank';
+                        rank = data.data.rank.current ? `${data.data.rank.current.rank}/${data.data.rank.current.mmr}` : 'No rank';
                     }
                     catch (e) { }
                     $(allUsers[index]).parent().parent().prepend(`(${rank}) `);                    
